@@ -1,0 +1,19 @@
+{
+  "name": "18-nosql",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "require": "^0.4.4"
+  }
+}
