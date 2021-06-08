@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { addComment, removeComment } = require('../../controllers/comment-controller');
+const { addComment, removeComment, addReply, removeReply } = require('../../controllers/comment-controller');
 
 // /api/comments/<pizzaId>
 router.route('/:pizzaId').post(addComment);
@@ -9,6 +9,13 @@ router.route('/:pizzaId').post(addComment);
 // you need the comment id, but you also need to know which pizza that
 //comment came from to update the association & delete the associated comment data
 //from the pizza
-router.route('/:pizzaId/:commentId').delete(removeComment);
+router.route('/:pizzaId/:commentId')
+  .put(addReply)
+  .delete(removeComment);
+
+//for reply api
+router
+  .route('/:pizzaId/:replyId')
+  .delete(removeReply);
 
 module.exports = router;
