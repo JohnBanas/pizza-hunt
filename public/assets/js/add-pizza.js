@@ -65,10 +65,12 @@ const handlePizzaSubmit = event => {
     .then(response => response.json())
     .then(postResponse => {
       alert('Pizza created successfully!');
-      console.log(chalk.greenBright(postResponse));
+      console.log(postResponse);
     })
     .catch(err => {
-      console.log(chalk.greenBright(err));
+      console.log(err);
+      //save the pizza in IndexDB if there is no  internet connection
+      saveRecord(formData);
     });
 };
 
